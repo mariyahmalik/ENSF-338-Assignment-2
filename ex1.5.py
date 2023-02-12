@@ -11,11 +11,12 @@ def func(n):
 elapsed_time = timeit.timeit(lambda : func(35), number = 1)
 print(f'Elapsed time for original code: {elapsed_time} seconds')
 
-fib_list = [func(n) for n in range(36)]
+n_values = [n for n in range(36)]
+time_execution = [timeit.timeit(lambda: func(n), number = 1) for n in range(36)]
 
-plt.plot(fib_list, label = "Fibonacci Numbers")
+plt.plot(n_values, time_execution)
 plt.xlabel("n")
-plt.ylabel("fib(n)")
+plt.ylabel("Time Execution (seconds)")
 plt.title("Fibonacci Numbers Plot for Original Code")
 plt.legend()
 plt.show()
@@ -34,11 +35,12 @@ def func(n, memo = {}):
 elapsed_time = timeit.timeit(lambda : func(35), number = 1)
 print(f'Elapsed time for improved code: {elapsed_time} seconds')
 
-fib_list = [func(n) for n in range(36)]
+n_values = [n for n in range(36)]
+time_execution = [timeit.timeit(lambda: func(n), number = 1) for n in range(36)]
 
-plt.plot(fib_list, label = "Fibonacci Numbers")
+plt.plot(n_values, time_execution)
 plt.xlabel("n")
-plt.ylabel("fib(n)")
+plt.ylabel("Time Execution (seconds)")
 plt.title("Fibonacci Numbers Plot for Improved Code")
 plt.legend()
 plt.show()
